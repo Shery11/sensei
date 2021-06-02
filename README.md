@@ -2,15 +2,27 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 12.0.2.
 
-## Development server
+## Local Server (Development)
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+Run `npm run start:dev` for a local development server and navigate to `http://localhost:4200/`. The app will automatically reload if you make changes to any of the source files.
 
-## Code scaffolding
+## Local Server (Production)
+
+Run `npm run start:prod` for a local production server and navigate to `http://localhost:4200/`.
+
+## Deploy (Development)
+
+Run `npm run release:dev` to deploy to the live development server.
+
+## Deploy (Production)
+
+Run `npm run release:prod` to deploy to the live production server.
+
+## Code Generation
 
 Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
 
-## Build
+<!-- ## Build
 
 Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
 
@@ -24,4 +36,4 @@ Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To u
 
 ## Further help
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page. -->

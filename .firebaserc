@@ -1,0 +1,18 @@
+{
+  "targets": {
+    "sensei-dev-83f99": {
+      "hosting": {
+        "sensei": [
+          "sensei-dev-83f99"
+        ]
+      }
+    },
+    "sensei-production-462de": {
+      "hosting": {
+        "sensei": [
+          "sensei-production-462de"
+        ]
+      }
+    }
+  }
+}

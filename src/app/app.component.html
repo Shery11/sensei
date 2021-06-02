@@ -1,2 +1,5 @@
 <app-nav></app-nav>
 <router-outlet></router-outlet>
+<h2 *ngIf="environmentName === 'dev' ? true : false">
+  ({{environmentName}})
+</h2>
