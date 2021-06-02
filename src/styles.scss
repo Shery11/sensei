@@ -37,3 +37,22 @@ $sensei-theme: mat.define-light-theme((
 
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+.d-flex { display: flex; }
+
+.justify-content-start {
+  justify-content: flex-start;
+  margin-left: 0;
+  margin-right: auto;
+}
+
+.justify-content-end {
+  justify-content: flex-end;
+  margin-right: 0;
+  margin-left: auto;
+}
+
+.vertically-center {
+  align-items: center;
+  justify-content: center;
+}
