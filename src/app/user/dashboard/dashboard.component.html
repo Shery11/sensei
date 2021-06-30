@@ -1,0 +1,10 @@
+<!-- <mat-list *ngIf="user"> -->
+<mat-list>
+  <mat-list-item>UID: {{ user?.uid }}</mat-list-item>
+  <mat-list-item>Display Name: {{ user?.displayName }}</mat-list-item>
+  <mat-list-item>Email: {{ user?.email }}</mat-list-item>
+</mat-list>
+<button mat-raised-button (click)="logout()" color="primary" class="ml-3 mt-4">
+  <mat-icon>logout</mat-icon>
+  <span>Log out</span>
+</button>

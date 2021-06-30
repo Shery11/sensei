@@ -1,9 +1,14 @@
 <header>
   <mat-toolbar color="primary">
-    <a href="/" class="d-flex justify-content-start vertically-center">
+    <a href="/" class="logo">
       <mat-icon>local_fire_department</mat-icon>
       <span>CoinSensei</span>
     </a>
-    <a href="/about" class="d-flex justify-content-end">About</a>
+    <div *ngIf="hasUpdated" class="d-flex flex-row">
+      <a href="/about" class="d-flex justify-content-end mr-0 ml-auto">About</a>
+      <a *ngIf="isLoggedIn" href="/dash" class="ml-3">Dashboard</a>
+      <a *ngIf="!isLoggedIn" href="/login" class="ml-3">Login</a>
+      <a *ngIf="!isLoggedIn" href="/signup" class="ml-3">Sign Up</a>
+    </div>
   </mat-toolbar>
 </header>

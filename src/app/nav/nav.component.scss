@@ -2,3 +2,13 @@ a {
   color: #FFF;
   text-decoration: none;
 }
+
+.logo {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  margin-left: 0;
+  margin-right: auto;
+
+  span { margin-left: 0.25em; }
+}

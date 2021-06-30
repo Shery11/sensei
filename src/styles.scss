@@ -33,26 +33,16 @@ $sensei-theme: mat.define-light-theme((
 // that you are using.
 @include mat.all-component-themes($sensei-theme);
 
-/* You can add global styles to this file, and also import other style files */
+@import './assets/styles/bootstrap.scss';
 
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
-
-.d-flex { display: flex; }
-
-.justify-content-start {
-  justify-content: flex-start;
-  margin-left: 0;
-  margin-right: auto;
-}
-
-.justify-content-end {
-  justify-content: flex-end;
-  margin-right: 0;
-  margin-left: auto;
-}
-
-.vertically-center {
+.content { min-height: calc(100vh - 50px); }
+.footer {
+  display: flex;
+  flex-direction: row;
   align-items: center;
-  justify-content: center;
+  height: 50px;
+  font-weight: bold;
+  background: #EEE;
 }

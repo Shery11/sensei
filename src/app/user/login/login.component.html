@@ -1,0 +1,23 @@
+<h2 class="mt-4 ml-3">Login</h2>
+<mat-card class="form-card m-3">
+  <form [formGroup]="loginForm" (ngSubmit)="loginUser()" type="">
+    <p>
+      <mat-form-field appearance="outline">
+        <mat-label>Email</mat-label>
+        <input matInput formControlName="email" type="email" placeholder="Email" autocomplete="off">
+      </mat-form-field>
+    </p>
+    <p>
+      <mat-form-field appearance="outline">
+        <mat-label>Password</mat-label>
+        <input matInput formControlName="password" type="password" placeholder="Password" autocomplete="off">
+      </mat-form-field>
+    </p>
+    <div *ngIf="errorMessage != ''" class="mat-error">
+      <span>{{ errorMessage }}</span>
+    </div>
+    <button mat-raised-button color="primary" [disabled]="!loginForm.valid">Login</button>
+    <button mat-raised-button color="primary" class="ml-3">Login with Google</button>
+    <button mat-raised-button color="accent" class="ml-3">Reset Password</button>
+  </form>
+</mat-card>

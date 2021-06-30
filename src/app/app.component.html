@@ -1,5 +1,10 @@
-<app-nav></app-nav>
-<router-outlet></router-outlet>
-<h2 *ngIf="environmentName === 'dev' ? true : false">
-  ({{environmentName}})
-</h2>
+<div class="content">
+  <app-nav></app-nav>
+  <router-outlet></router-outlet>
+</div>
+<footer class="footer">
+  <div class="justify-content-end ml-3 mr-auto">CoinSensei</div>
+  <div *ngIf="environmentName === 'dev' ? true : false" class="mr-3">
+    ({{environmentName}})
+  </div>
+</footer>

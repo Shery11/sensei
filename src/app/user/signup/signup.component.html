@@ -1,0 +1,27 @@
+<h2 class="mt-4 ml-3">Sign Up</h2>
+<mat-card class="form-card m-3">
+  <form [formGroup]="signupForm" (ngSubmit)="signupUser()">
+    <p>
+      <mat-form-field appearance="outline">
+      <mat-label>Name</mat-label>
+      <input matInput formControlName="displayName" type="text" placeholder="Name" autocomplete="off">
+      </mat-form-field>
+    </p>
+    <p>
+      <mat-form-field appearance="outline">
+      <mat-label>Email</mat-label>
+      <input matInput formControlName="email" type="email" placeholder="Email">
+      </mat-form-field>
+    </p>
+    <p>
+      <mat-form-field appearance="outline">
+      <mat-label>Password</mat-label>
+      <input matInput formControlName="password" type="password" placeholder="Password" autocomplete="off">
+      </mat-form-field>
+    </p>
+    <div *ngIf="errorMessage != ''" class="mat-error">
+      <span>{{ errorMessage }}</span>
+    </div>
+    <button mat-raised-button color="primary">Sign Up</button>
+  </form>
+</mat-card>
