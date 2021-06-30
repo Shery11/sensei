@@ -7,7 +7,7 @@ import { AuthService } from 'src/app/services/auth.service';
 @Injectable({
   providedIn: 'root'
 })
-export class AuthGuard implements CanActivate {
+export class AdminGuard implements CanActivate {
 
   constructor(
     private auth: AuthService,
@@ -20,9 +20,9 @@ export class AuthGuard implements CanActivate {
 
     return this.auth.user.pipe(
       take(1),
-      map(user => user && this.auth.canAccess(user) ? true : false),
-      tap(canAccess => {
-        if (!canAccess) {
+      map(user => user && user.roles.admin ? true : false),
+      tap(isAdmin => {
+        if (!isAdmin) {
           this.router.navigate(['/']);
         }
       })

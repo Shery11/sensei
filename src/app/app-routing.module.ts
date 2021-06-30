@@ -7,13 +7,13 @@ import { UserDashboardComponent } from 'src/app/user/dashboard/dashboard.compone
 import { ForgotPasswordComponent } from 'src/app/user/forgot-password/forgot-password.component';
 import { LoginComponent } from 'src/app/user/login/login.component';
 import { SignupComponent } from 'src/app/user/signup/signup.component';
-
+import { AdminGuard } from 'src/app/services/admin.guard';
 import { AuthGuard } from 'src/app/services/auth.guard';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'about', component: AboutComponent },
-  { path: 'admin', component: AdminDashboardComponent, canActivate: [AuthGuard] },
+  { path: 'admin', component: AdminDashboardComponent, canActivate: [AdminGuard] },
   { path: 'dash', component: UserDashboardComponent, canActivate: [AuthGuard] },
   { path: 'forgot-password', component: ForgotPasswordComponent },
   { path: 'login', component: LoginComponent },

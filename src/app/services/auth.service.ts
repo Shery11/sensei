@@ -3,7 +3,7 @@ import { AngularFireAuth } from '@angular/fire/auth';
 import { AngularFirestore, AngularFirestoreDocument } from '@angular/fire/firestore';
 import { Router } from '@angular/router';
 import { Observable, of } from 'rxjs';
-import { switchMap, shareReplay, startWith, tap } from 'rxjs/operators';
+import { switchMap } from 'rxjs/operators';
 import { User } from 'src/app/interfaces/user';
 
 @Injectable({
@@ -100,6 +100,19 @@ export class AuthService {
         console.log('Error Code:', err.code);
         console.log(err);
       });
+  }
+
+  canAccess(user: User): boolean {
+    const allowed: string[] = ['admin', 'basic'];
+    return this.checkAuthorization(user, allowed);
+  }
+
+  private checkAuthorization(user: User, allowedRoles: string[]): boolean {
+    if (!user) return false;
+    for (const role of allowedRoles) {
+      if (user.roles.hasOwnProperty(role)) return true;
+    }
+    return false;
   }
 
 }
