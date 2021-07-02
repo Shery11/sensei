@@ -3,7 +3,7 @@ import { AngularFireAuth } from '@angular/fire/auth';
 import { AngularFirestore, AngularFirestoreDocument } from '@angular/fire/firestore';
 import { Router } from '@angular/router';
 import { Observable, of } from 'rxjs';
-import { switchMap } from 'rxjs/operators';
+import { catchError, debounce, debounceTime, switchMap } from 'rxjs/operators';
 import { User } from 'src/app/interfaces/user';
 
 @Injectable({
@@ -20,7 +20,7 @@ export class AuthService {
   ) {
     this.user = afAuth.authState.pipe(
       switchMap(user => {
-        return user ? this.afs.doc<User>(`users/${user.uid}`).valueChanges() : of(null);
+        return user ? this.afs.doc<User>(`users/${user.uid}`).valueChanges().pipe(catchError(err => { console.log(err); return of(null) })) : of(null);
       })
     );
   }
